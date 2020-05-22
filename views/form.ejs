@@ -1,0 +1,113 @@
+<h2>Dossier de Candidature</h2>
+<% if (locals.errors != null ) { %> 
+    <% errors.forEach(error => { %>
+        <li class="alert alert-danger"><%= error.msg %></li>
+   <% }) %> 
+<% } %> 
+
+
+    <div class="testbox">
+      <form action="/" method="POST">
+        <h3>Identite</h3>
+         <select name="identite">
+            <option value="Madame">Madame</option>
+            <option value="Mademoiselle">Mademoiselle</option>
+            <option value="Monsieur">Monsieur</option>
+          </select>
+        <h2>Applicant Details</h2>
+        <div class="item">
+          <p>Name:</p>
+          <div class="name-item">
+            <input type="text" name="name" value="<%= user.name %>" placeholder="Full name"/>
+          </div>
+        </div>
+        <div class="item">
+          <p>Date de Naissance</p>
+          <input type="date" name="date" 
+          value="<%= user.date == null ? '' : user.date.toISOString().split('T')[0] %>"/>
+        </div>
+        <div class="item">
+            <p>Lieu de naissance</p>
+            <input type="text" name="lieu" value="<%= user.lieu %>"/>
+          </div>
+        <div class="item">
+          <p>Numero national d'identification</p>
+          <input type="text" name="national" value="<%= user.national %>"/>
+        </div>
+        
+<h3>Addresse personelle</h3>
+        <div class="item">
+          <p>Telephone</p>
+          <input type="number" name="phone" min="1" value="<%= user.phone %>"/>
+        </div>
+        <div class="item">
+          <p>Email</p>
+          <input type="email" name="email" value="<%= user.email %>"/>
+        </div>
+        <div class="item">
+            <p>Addresse</p>
+            <input type="adresse" name="adresse" value="<%= user.adresse %>"/>
+          </div>
+        <div class="item">
+          <p>Code postal</p>
+          <input type="text" name="code" value="<%= user.code %>"/>
+         
+          <div class="city-item">
+            <p>Ville</p>
+            <input type="text" name="city" placeholder="City" value="<%= user.city %>" />
+            <p>Pays</p>
+            <select name="region">
+              <option value="Cameroun">Cameroun</option>
+              <option value="Centre Afrique">Centre Afrique</option>
+              <option value="Congo">Congo</option>
+              <option value="Cote D'Ivoire">Cote D'Ivoire</option>
+              <option value="Gabon">Gabon</option>
+              <option value="Senegal">Senegal</option>
+              <option value="Tchad">Tchad</option>
+            </select>
+          </div>
+        </div>
+<h2>Etudes et diplomes</h2>
+        <div class="item">
+          <p>Bac +1:</p>
+          <label>Etablissement Frequente</label>
+          <input type="text" name="etablissement1"  value="<%= user.etablissement1 %>"/>
+          <input type="date" name="annee1"
+          value="<%= user.annee1 == null ? '' : user.date.toISOString().split('T')[0] %>"/>
+        </div>
+        <div class="item">
+          <p>Bac +2:</p>
+          <label>Etablissement Frequente</label>
+          <input type="text" name="etablissement2"  value="<%= user.etablissement2 %>"/>
+          <input type="date" name="annee2"
+          value="<%= user.annee2 == null ? '' : user.date.toISOString().split('T')[0] %>"/>
+        </div>
+        <div class="item">
+          <p>Bac +3:</p>
+          <label>Etablissement Frequente</label>
+          <input type="text" name="etablissement3" value="<%= user.etablissement3 %>" />
+          <input type="date" name="annee3"
+          value="<%= user.annee3 == null ? '' : user.date.toISOString().split('T')[0] %>"/>
+        </div>
+        <div class="item">
+          <p>Bac +4:</p>
+          <label>Etablissement Frequente</label>
+          <input type="text" name="etablissement4" value="<%= user.etablissement4 %>" />
+          <input type="date" name="annee4"
+          value="<%= user.annee4 == null ? '' : user.date.toISOString().split('T')[0] %>"/>
+        </div>
+        <div class="item">
+          <p>Bac +5:</p>
+          <label>Etablissement Frequente</label>
+          <input type="text" name="etablissement5" value="<%= user.etablissement5 %>" />
+          <input type="date" name="annee5"
+          value="<%= user.annee5 == null ? '' : user.date.toISOString().split('T')[0] %>"/>
+        </div>
+       
+        <h2>Langues Vivantes</h2>
+        
+        <div class="btn-block">
+          <button type="submit">Valider le formulaire</button>
+        </div>
+      </form>
+    </div>
