@@ -1,0 +1,32 @@
+<%- include('../../layouts/header.ejs') %> 
+<h1 class="text-center" style="text-decoration: underline;">Liste de tout les candidats</h1>
+<table class="table table-bordered table-hover alert-success">
+    <!-- <tr><th>Number</th><th>Name</th><th>Category</th><th>Author</th></tr> -->
+    <tr>
+        <thead>
+            <th>Num</th>
+            <th>Identity</th>
+            <th>Name</th>
+            <th>Lieu</th>
+            <th>Phone</th>
+            <th>email</th>
+            <th>city</th>
+        </thead>
+    </tr>
+    <tbody>
+        <% users.forEach((user, index) => { %>
+            <tr>
+                <td><%= index %></td>
+                <td><%= user.identite %></td>
+                <td><%= user.name %></td>
+                <td><%= user.lieu %></td>
+                <td><%= user.phone  %></td>
+                <td><%= user.email %></td>
+                <td><%= user.city %></td>
+                <td><a href="/leduc/users/<%= user._id%>">voir</a></td>
+            </tr>
+        <%  }) %> 
+      
+    </tbody>
+    </table>
+<%- include('../../layouts/footer.ejs') %> 

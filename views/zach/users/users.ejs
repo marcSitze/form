@@ -1,0 +1,34 @@
+<%- include('../../layouts/header.ejs') %> 
+<h1 class="text-center" style="text-decoration: underline;">Liste de tout les candidats</h1>
+<table class="table table-bordered table-hover alert-success">
+    <!-- <tr><th>Number</th><th>Name</th><th>Category</th><th>Author</th></tr> -->
+    <tr>
+        <thead>
+            <th>Num</th>
+            <th>Identity</th>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Adresse</th>
+            <th>Formation</th>
+        </thead>
+    </tr>
+    <tbody>
+        <% users.forEach((user, index) => { %>
+            <tr>
+                <td><%= index %></td>
+                <td><%= user.identite %></td>
+                <td><%= user.name %></td>
+                <td><%= user.date.toISOString().split('T')[0] %></td>
+                <td><%= user.phone  %></td>
+                <td><%= user.email %></td>
+                <td><%= user.adresse %></td>
+                <td><%= user.formation %></td>
+                <td><a href="/zach/users/<%= user._id%>">voir</a></td>
+            </tr>
+        <%  }) %> 
+      
+    </tbody>
+    </table>
+<%- include('../../layouts/footer.ejs') %> 

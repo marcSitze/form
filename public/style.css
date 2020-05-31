@@ -7,16 +7,16 @@ html, body {
     outline: none;
     font-family: Roboto, Arial, sans-serif;
     font-size: 14px;
-    color: #600;
+    /* color: #600; */
     line-height: 22px;
     }
-    h1 {
+    /* h1 {
     position: absolute;
     margin: 0;
     font-size: 32px;
     color: #fff;
     z-index: 2;
-    }
+    } */
     h2 {
     font-weight: 400;
     }
@@ -170,4 +170,49 @@ html, body {
     .city-item select {
     width: calc(50% - 8px);
     }
+    }
+
+    .custom{
+        width: 600px;
+    }
+    .input-element{
+        width: 300px;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid;
+        transition: all .2s;
+        margin: 5px auto;
+        padding: 1px 15px;
+    }
+    .input-element:focus{
+        border-color: green;
+    }
+    .delete{
+        background-color: rgb(255, 0, 0);
+        text-align: center;
+    }
+    .delete:hover{
+       background-color: rgba(255, 0, 0, .7);
+       cursor: pointer;
+    }
+    /* .book-content{
+        background-color: black;
+        height: 80vh;
+    } */
+    .error{
+        border-color: red;
+    }
+
+    .user{
+        margin: 20px;
+        padding: 20px;
+        border: 1px solid;
+        color: #000;
+    }
+    .user h1{
+        color: #000;
+        margin: 20px;
+    }
+    .sub-title{
+        color: #337ab7;
     }

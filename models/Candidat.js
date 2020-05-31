@@ -47,45 +47,38 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     etablissement1: {
-        type: String,
-        required: true
+        type: String
     },
     annee1: {
-        type: Date,
-        required: true
+        type: String
     },
     etablissement2: {
-        type: String,
-        required: true
+        type: String
     },
     annee2: {
-        type: Date,
-        required: true
+        type: String
     },
     etablissement3: {
-        type: String,
-        required: true
+        type: String
     },
     annee3: {
-        type: Date,
-        required: true
+        type: String
     },
     etablissement4: {
-        type: String,
-        required: true
+        type: String
     },
     annee4: {
-        type: Date,
-        required: true
+        type: String
     },
     etablissement5: {
-        type: String,
-        required: true
+        type: String
     },
     annee5: {
-        type: Date,
-        required: true
+        type: String
     },
+    langue: {
+        type: String
+    }
 });
 
 module.exports = mongoose.model('Candidat', userSchema);

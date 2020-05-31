@@ -5,12 +5,17 @@ const Candidat = require('../models/Candidat');
 
 // Render the form
 router.get('/', (req, res) => {
-    res.render('index', { user: new Candidat() });
+    res.render('leduc/form', { 
+        user: new Candidat(),
+        title: "Enregistrement"
+     });
 });
 
 // render the congrat page
 router.get('/welcome', (req, res) => {
-    res.render('welcome');
+    res.render('leduc/welcome', {
+        title: "Welcome"
+    });
 });
 
 // Get form values and save it in db
@@ -23,12 +28,7 @@ router.post('/', [
     check('phone', 'please your phone number').not().isEmpty(),
     check('email', 'please enter a valid email').isEmail(),
     check('adresse', 'please enter your adresse').not().isEmpty(),
-    check('city', 'please enter your city').not().isEmpty(),
-    check('etablissement1', 'please enter your 1st year school').not().isEmpty(),
-    check('etablissement2', 'please enter your 2nd year school').not().isEmpty(),
-    check('etablissement3', 'please enter your 3rd year school').not().isEmpty(),
-    check('etablissement4', 'please enter your 4th year school').not().isEmpty(),
-    check('etablissement5', 'please enter your 5th year school').not().isEmpty()
+    check('city', 'please enter your city').not().isEmpty()
     
 ], async (req, res) => {
     const user = new Candidat({
@@ -44,22 +44,22 @@ router.post('/', [
         city: req.body.city,
         region: req.body.region,
         etablissement1: req.body.etablissement1,
-        annee1: new Date(req.body.annee1),
+        annee1: req.body.annee1,
         etablissement2: req.body.etablissement2,
-        annee2: new Date(req.body.annee2),
+        annee2: req.body.annee2,
         etablissement3: req.body.etablissement3,
-        annee3: new Date(req.body.annee3),
+        annee3: req.body.annee3,
         etablissement4: req.body.etablissement4,
-        annee4: new Date(req.body.annee4),
+        annee4: req.body.annee4,
         etablissement5: req.body.etablissement5,
-        annee5: new Date(req.body.annee5)
-
+        annee5: req.body.annee5,
+        langue: req.body.langue
     });
     const errors = validationResult(req);
 
     if(!errors.isEmpty()){
       //  return res.status(400).json({ errors: errors.array() });
-        return res.status(400).render('index', {
+        return res.status(400).render('leduc/form', {
             user: user, 
             errors: errors.array()
          });
@@ -67,8 +67,8 @@ router.post('/', [
 
     try {
         const newUser = await user.save();
-        console.log(newUser);
-        res.status(201).redirect('welcome');
+       // console.log(newUser);
+        res.status(201).redirect('leduc/welcome');
         
     } catch(err) {
         res.status(400).send(err);

@@ -1,0 +1,42 @@
+<%- include('../../layouts/header.ejs') %> 
+  <div class="container">
+      <div class="row">
+          <div class="col-md-10 bg-info">
+              <div class="user">
+            <h2>Identity: <%= user.identite %></h2>
+            <h2>Name: <%= user.name %></h2>
+            <h2>Date of Birth: <%= user.date.toISOString().split('T')[0] %></h2>
+            <h2>Place of Birth: <%= user.lieu %></h2>
+            <h2>National ID: <%= user.national %></h2>
+            <h2>Phone: <%= user.phone %></h2>
+            <h2>Email: <%= user.email %></h2>
+            <h2>Adresse: <%= user.adresse %></h2>
+            <h2>Postal code: <%= user.code %></h2>
+            <h2>City: <%= user.city %></h2>
+            <h2>Pay: <%= user.region %></h2>
+            <h1>Bac +1</h1>
+            <h2>Etablissement: <%= user.etablissement1 %></h2>
+            <h2>Year: <%= user.annee1 %></h2>
+            <h1>Bac +2</h1>
+            <h2>Etablissement: <%= user.etablissement2 %></h2>
+            <h2>Year: <%= user.annee2 %></h2>
+            <h1>Bac +3</h1>
+            <h2>Etablissement: <%= user.etablissement3 %></h2>
+            <h2>Year: <%= user.annee3 %></h2>
+            <h1>Bac +4</h1>
+            <h2>Etablissement: <%= user.etablissement4 %></h2>
+            <h2>Year: <%= user.annee4 %></h2>
+            <h1>Bac +5</h1>
+            <h2>Etablissement: <%= user.etablissement5 %></h2>
+            <h2>Year: <%= user.annee5 %></h2>
+            <h1>Langue vivante : <%= user.langue %></h1>
+          </div>
+      </div>
+   </div>
+</div>
+    <div class="text-center mb-5">
+        <a href="/leduc/users" class="btn btn-danger btn-lg">Voir la liste des candidats</a>
+    </div>
+    
+
+<%- include('../../layouts/footer.ejs') %> 
