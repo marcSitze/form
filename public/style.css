@@ -209,6 +209,10 @@ html, body {
         padding: 20px;
         border: 1px solid;
         color: #000;
+        
+    }
+    .user-bg{
+        background-color: #478d99;
     }
     .user h1{
         color: #000;
@@ -228,3 +232,21 @@ html, body {
     span {
         margin: 20px 10px;
     }
+
+ @media (max-width: 720px) {
+
+     #logo{
+         top: 15%;
+         width: 100px;
+         height: 100px;
+     }
+     .testbox{
+         margin-top: 100px;
+     }
+     .titre{
+         font-size: 23px;
+     }
+     .sub-diplome{
+         font-size: 23px;
+     }
+ }

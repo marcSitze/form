@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
 // Don't forget to comment this line in production
-// require('dotenv').config();
+// if(process.env.NODE_ENV != 'production'){
+//     require('dotenv').config();
+// }
 
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');

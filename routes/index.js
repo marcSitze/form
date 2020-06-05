@@ -34,7 +34,7 @@ router.post('/', [
     const user = new Candidat({
         identite: req.body.identite,
         name: req.body.name,
-        date: new Date(req.body.date),
+        date: req.body.date,
         lieu: req.body.lieu,
         national: req.body.national,
         phone: req.body.phone,
@@ -56,7 +56,8 @@ router.post('/', [
         annee4: req.body.annee4,
         etablissement5: req.body.etablissement5,
         annee5: req.body.annee5,
-        langue: req.body.langue
+        langue: req.body.langue,
+        langue2: req.body.langue2
     });
     const errors = validationResult(req);
 console.log(user);

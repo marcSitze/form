@@ -1,11 +1,11 @@
 <%- include('../../layouts/header.ejs') %> 
   <div class="container">
       <div class="row">
-          <div class="col-md-10 bg-info">
+          <div class="col-md-10 user-bg">
               <div class="user">
             <h2>Identity: <%= user.identite %></h2>
             <h2>Name: <%= user.name %></h2>
-            <h2>Date of Birth: <%= user.date.toISOString().split('T')[0] %></h2>
+            <h2>Date of Birth: <%= user.date %></h2>
             <h2>Place of Birth: <%= user.lieu %></h2>
             <h2>National ID: <%= user.national %></h2>
             <h2>Phone: <%= user.phone %></h2>
@@ -34,6 +34,7 @@
             <h2>Etablissement: <%= user.etablissement5 %></h2>
             <h2>Year: <%= user.annee5 %></h2>
             <h1>Langue vivante : <%= user.langue %></h1>
+            <h1>Autre langue : <%= user.langue2 %></h1>
           </div>
       </div>
    </div>

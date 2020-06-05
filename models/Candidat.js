@@ -10,9 +10,8 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     date:{
-        type: Date,
-        required: true,
-        default: Date.now
+        type: String,
+        required: true
     },
     lieu:{
         type: String,
@@ -86,6 +85,9 @@ const userSchema = new mongoose.Schema({
         type: String
     },
     langue: {
+        type: String
+    },
+    langue2: {
         type: String
     }
 });

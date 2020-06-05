@@ -1,44 +1,43 @@
 <%- include('../layouts/header.ejs') %> 
-<h2 style="margin-left: 20px; text-decoration: underline;" class="text-center sub-title">Formulaire de Candidature</h2>
+<h2 style="margin-left: 20px; text-decoration: underline;" class="text-center sub-title titre">FORMULAIRE D'ENREGISTREMENT</h2>
 <% if (locals.errors != null ) { %> 
     <% errors.forEach(error => { %>
         <li class="alert alert-danger"><%= error.msg %></li>
    <% }) %> 
 <% } %> 
 
-<img class="logo" src="/img/logo.jpeg">
+<img class="logo" id="logo" src="/img/logo.jpeg">
     <div class="testbox">
      
       <form action="/leduc" method="POST">
-        <h3 class="sub-title">Identite</h3>
+        <h3 class="sub-title">Identité</h3>
          <select name="identite">
             <option value="Madame">Madame</option>
             <option value="Mademoiselle">Mademoiselle</option>
             <option value="Monsieur">Monsieur</option>
           </select>
         <div class="item">
-          <p>Name:</p>
+          <p>Nom:</p>
           <div class="name-item">
             <input type="text" name="name" value="<%= user.name %>" placeholder="Full name"/>
           </div>
         </div>
         <div class="item">
           <p>Date de Naissance</p>
-          <input type="date" name="date" 
-          value="<%= user.date == null ? '' : user.date.toISOString().split('T')[0] %>"/>
+          <input type="text" name="date" value="<%= user.date %>"/>
         </div>
         <div class="item">
             <p>Lieu de naissance</p>
             <input type="text" name="lieu" value="<%= user.lieu %>"/>
           </div>
         <div class="item">
-          <p>Numero national d'identification</p>
+          <p>Numéro national d'identification</p>
           <input type="text" name="national" value="<%= user.national %>"/>
         </div>
         
-<h3 class="sub-title">Addresse personelle</h3>
+<h3 class="sub-title">Adresse personelle</h3>
         <div class="item">
-          <p>Telephone</p>
+          <p>Télephone</p>
           <input type="number" name="phone" min="1" value="<%= user.phone %>"/>
         </div>
         <div class="item">
@@ -46,7 +45,7 @@
           <input type="email" name="email" value="<%= user.email %>"/>
         </div>
         <div class="item">
-            <p>Addresse</p>
+            <p>Adresse</p>
             <input type="adresse" name="adresse" value="<%= user.adresse %>"/>
           </div>
         <div class="item">
@@ -71,59 +70,58 @@
           </div>
         </div>
         <div class="item modules">
-          <p>Modules</p><br>
+          <h2 class="sub-title">Modules</h2><br>
           <span>
-            <label>Economie petroliere: <input type="checkbox" name="module1" value="Economie petroliere"></label>
+            <label>Economie pétrolière: <input type="checkbox" name="module1" value="Economie petroliere"></label>
           </span>
           <span>
-            <label>Production petroliere: <input type="checkbox" name="module2" value="Production petroliere"></label>
+            <label>Production pétrolière: <input type="checkbox" name="module2" value="Production petroliere"></label>
           </span>
           <span>
-            <label>Modelisation des reservoirs: <input type="checkbox" name="module3" value="Modelisation des reservoirs"></label>
+            <label>Modélisation des reservoirs: <input type="checkbox" name="module3" value="Modelisation des reservoirs"></label>
           </span>
           </div>
         
-<h2 class="sub-title">Etudes et diplomes</h2>
+<h2 class="sub-title sub-diplome">Etudes et diplômes</h2>
         <div class="item">
           <p>Bac +1:</p>
-          <label>Etablissement Frequente</label>
+          <label>Etablissement Fréquenté</label>
           <input type="text" name="etablissement1"  value="<%= user.etablissement1 %>"/>
-          <input type="text" name="annee1"
-          value="<%= user.annee1 %>"/>
+          <label>Année: <input type="text" name="annee1"value="<%= user.annee1 %>"/></label>
         </div>
         <div class="item">
           <p>Bac +2:</p>
-          <label>Etablissement Frequente</label>
+          <label>Etablissement Fréquenté</label>
           <input type="text" name="etablissement2"  value="<%= user.etablissement2 %>"/>
-          <input type="text" name="annee2"
-          value="<%= user.annee2 %>"/>
+          <label>Année: <input type="text" name="annee2"value="<%= user.annee2 %>"/></label>
         </div>
         <div class="item">
           <p>Bac +3:</p>
-          <label>Etablissement Frequente</label>
+          <label>Etablissement Fréquenté</label>
           <input type="text" name="etablissement3" value="<%= user.etablissement3 %>" />
-          <input type="text" name="annee3"
-          value="<%= user.annee3 %>"/>
+          <label>Année: <input type="text" name="annee3"value="<%= user.annee3 %>"/></label>
         </div>
         <div class="item">
           <p>Bac +4:</p>
-          <label>Etablissement Frequente</label>
+          <label>Etablissement Fréquenté</label>
           <input type="text" name="etablissement4" value="<%= user.etablissement4 %>" />
-          <input type="text" name="annee4"
-          value="<%= user.annee4 %>"/>
+          <label>Année: <input type="text" name="annee4"value="<%= user.annee4 %>"/></label>
         </div>
         <div class="item">
           <p>Bac +5:</p>
-          <label>Etablissement Frequente</label>
+          <label>Etablissement Fréquenté</label>
           <input type="text" name="etablissement5" value="<%= user.etablissement5 %>" />
-          <input type="text" name="annee5"
-          value="<%= user.annee5 %>"/>
+          <label>Année: <input type="text" name="annee5"value="<%= user.annee5 %>"/></label>
         </div>
        
         <h2 class="sub-title">Langues Vivantes</h2>
         <div class="item">
           <p>Langue maternelle</p>
           <input type="text" name="langue" value="<%= user.langue %>"/>
+        </div>
+        <div class="item">
+          <p>Autre langue</p>
+          <input type="text" name="langue2" value="<%= user.langue2 %>"/>
         </div>
         <div class="btn-block">
           <button type="submit">Valider le formulaire</button>
