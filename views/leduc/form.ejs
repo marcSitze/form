@@ -1,13 +1,14 @@
 <%- include('../layouts/header.ejs') %> 
-<h2 style="margin-left: 20px; text-decoration: underline;" class="text-center sub-title">Dossier de Candidature</h2>
+<h2 style="margin-left: 20px; text-decoration: underline;" class="text-center sub-title">Formulaire de Candidature</h2>
 <% if (locals.errors != null ) { %> 
     <% errors.forEach(error => { %>
         <li class="alert alert-danger"><%= error.msg %></li>
    <% }) %> 
 <% } %> 
 
-
+<img class="logo" src="/img/logo.jpeg">
     <div class="testbox">
+     
       <form action="/leduc" method="POST">
         <h3 class="sub-title">Identite</h3>
          <select name="identite">
@@ -69,6 +70,19 @@
             </select>
           </div>
         </div>
+        <div class="item modules">
+          <p>Modules</p><br>
+          <span>
+            <label>Economie petroliere: <input type="checkbox" name="module1" value="Economie petroliere"></label>
+          </span>
+          <span>
+            <label>Production petroliere: <input type="checkbox" name="module2" value="Production petroliere"></label>
+          </span>
+          <span>
+            <label>Modelisation des reservoirs: <input type="checkbox" name="module3" value="Modelisation des reservoirs"></label>
+          </span>
+          </div>
+        
 <h2 class="sub-title">Etudes et diplomes</h2>
         <div class="item">
           <p>Bac +1:</p>

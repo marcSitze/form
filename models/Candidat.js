@@ -46,6 +46,15 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    module1: {
+        type: String
+    },
+    module2: {
+        type: String
+    },
+    module3: {
+        type: String
+    },
     etablissement1: {
         type: String
     },

@@ -21,6 +21,7 @@ html, body {
     font-weight: 400;
     }
     .testbox {
+    margin-top: 170px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,7 +38,7 @@ html, body {
     .banner {
     position: relative;
     height: 210px;
-    background-image: url("/uploads/media/default/0001/01/3f0d2969f2cffeb123ab1a6fa7408bf87bd34bd3.jpeg");  
+    background-image: url("/public/img/logo.jpeg");  
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -96,9 +97,9 @@ html, body {
     opacity: 0;
     cursor: pointer;
     }
-    input[type=checkbox]  {
+    /* input[type=checkbox]  {
     display: none;
-    }
+    } */
     label.check {
     position: relative;
     display: inline-block;
@@ -215,4 +216,15 @@ html, body {
     }
     .sub-title{
         color: #337ab7;
+    }
+    .logo{
+        position: absolute;
+        top: 8%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        height: auto;
+        width: auto;
+    }
+    span {
+        margin: 20px 10px;
     }

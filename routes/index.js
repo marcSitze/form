@@ -43,6 +43,9 @@ router.post('/', [
         code: req.body.code,
         city: req.body.city,
         region: req.body.region,
+        module1: req.body.module1,
+        module2: req.body.module2,
+        module3: req.body.module3,
         etablissement1: req.body.etablissement1,
         annee1: req.body.annee1,
         etablissement2: req.body.etablissement2,
@@ -56,11 +59,12 @@ router.post('/', [
         langue: req.body.langue
     });
     const errors = validationResult(req);
-
+console.log(user);
     if(!errors.isEmpty()){
       //  return res.status(400).json({ errors: errors.array() });
         return res.status(400).render('leduc/form', {
-            user: user, 
+            user: user,
+            title: "Enregistrement", 
             errors: errors.array()
          });
     }

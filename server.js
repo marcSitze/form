@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 // Don't forget to comment this line in production
-// require('dotenv').config();
+ require('dotenv').config();
+
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const expressValidator = require('express-validator');
@@ -14,10 +15,10 @@ const usersZach = require('./routes/usersZach');
 // Set view engine
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
-const database_url = 'mongodb+srv://marc:marc1234@localdb-2oyid.mongodb.net/test?retryWrites=true&w=majority';
+// const database_url = 'mongodb+srv://marc:marc1234@localdb-2oyid.mongodb.net/test?retryWrites=true&w=majority';
 
 // Connect to the db
-mongoose.connect(database_url, {
+mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
