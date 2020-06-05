@@ -1,12 +1,17 @@
 <%- include('../layouts/header.ejs') %> 
 <h2 style="margin-left: 20px; text-decoration: underline;" class="text-center sub-title titre">FORMULAIRE D'ENREGISTREMENT</h2>
+
+<div class="logo-div">
+  <img class="logo" id="logo" src="/img/logo.jpeg">
+</div>
+
 <% if (locals.errors != null ) { %> 
     <% errors.forEach(error => { %>
         <li class="alert alert-danger"><%= error.msg %></li>
    <% }) %> 
 <% } %> 
 
-<img class="logo" id="logo" src="/img/logo.jpeg">
+
     <div class="testbox">
      
       <form action="/leduc" method="POST">

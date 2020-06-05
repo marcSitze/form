@@ -21,14 +21,14 @@ router.get('/welcome', (req, res) => {
 // Get form values and save it in db
 router.post('/', [
     // check name 
-    check('name', 'please Enter your name').not().isEmpty(),
-    check('date', 'please enter a valid date').not().isEmpty(),
-    check('lieu', 'please enter ton lieu de naissance').not().isEmpty(),
-    check('national', 'please enter ta national ID').not().isEmpty(),
-    check('phone', 'please your phone number').not().isEmpty(),
-    check('email', 'please enter a valid email').isEmail(),
-    check('adresse', 'please enter your adresse').not().isEmpty(),
-    check('city', 'please enter your city').not().isEmpty()
+    check('name', 'veillez entrer votre nom').not().isEmpty(),
+    check('date', 'veillez entrer votre date de naissance').not().isEmpty(),
+    check('lieu', 'veillez entrer votre lieu de naissance').not().isEmpty(),
+   // check('national', 'veillez entrer votre national ID').not().isEmpty(),
+    check('phone', 'veillez entrer votre numéro de téléphone').not().isEmpty(),
+    check('email', 'veillez entrer votre email').isEmail(),
+    check('adresse', 'veillez entrer votre adresse').not().isEmpty(),
+    check('city', 'veillez entrer votre ville').not().isEmpty()
     
 ], async (req, res) => {
     const user = new Candidat({

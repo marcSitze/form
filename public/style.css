@@ -21,7 +21,7 @@ html, body {
     font-weight: 400;
     }
     .testbox {
-    margin-top: 170px;
+    margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -221,11 +221,15 @@ html, body {
     .sub-title{
         color: #337ab7;
     }
+    .logo-div{
+        text-align: center;
+    }
     .logo{
-        position: absolute;
+        /* position: absolute;
         top: 8%;
         left: 50%;
-        transform: translate(-50%, 0);
+        transform: translate(-50%, 0); */
+        
         height: auto;
         width: auto;
     }
@@ -241,7 +245,7 @@ html, body {
          height: 100px;
      }
      .testbox{
-         margin-top: 100px;
+         margin-top: 25px;
      }
      .titre{
          font-size: 23px;
