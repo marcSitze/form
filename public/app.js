@@ -1,19 +1,15 @@
 const form = document.querySelector('form');
 const modules = document.querySelector('.modules');
+const button = document.querySelector('.pay');
+
 let count = 0;
-modules.addEventListener('click', e => {
-  //  console.log(e.target.checked);
-    // if(e.target.name == 'module1'){
-    //     count++;
-    // }
-    // if(e.target.name == 'module2'){
-    //     count++;
-    // }
-    // if(e.target.name == 'module3'){
-    //     count++;
-    // }
-    if(e.target.checked){
-        count++;
-    }
-    console.log(count);
-});
+
+// modules.addEventListener('click', e => {
+
+// });
+
+function trigger() {
+  button.addEventListener('click', e => {
+    sendPaymentInfos (numero_commande,'INTX8878', 'LF750BzV0KueVeBNPeDhtaR03iLRoSQWOEezaMK57Gd4LmyrV5', 'https://form-candidature.herokuapp.com/','https://form-candidature.herokuapp.com/leduc/welcome',' url_notif_failed', montant , ville , email, clientFirstname, clientLastname, clientPhone);
+  });
+}

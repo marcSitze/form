@@ -17,14 +17,13 @@
       <form action="/leduc" method="POST">
         <h3 class="sub-title">Identité</h3>
          <select name="identite">
-            <option value="Madame">Madame</option>
-            <option value="Mademoiselle">Mademoiselle</option>
-            <option value="Monsieur">Monsieur</option>
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
           </select>
         <div class="item">
           <p>Nom:</p>
           <div class="name-item">
-            <input type="text" name="name" value="<%= user.name %>" placeholder="Full name"/>
+            <input type="text" name="name" value="<%= user.name %>" placeholder="nom complet"/>
           </div>
         </div>
         <div class="item">
@@ -65,11 +64,11 @@
             <p>Pays</p>
             <select name="region">
               <option value="Cameroun">Cameroun</option>
-              <option value="Centre Afrique">Centre Afrique</option>
+              <option value="Centrafrique">Centrafrique</option>
               <option value="Congo">Congo</option>
-              <option value="Cote D'Ivoire">Cote D'Ivoire</option>
+              <option value="Côte d'Ivoire">Côte d'Ivoire</option>
               <option value="Gabon">Gabon</option>
-              <option value="Senegal">Senegal</option>
+              <option value="Sénégal">Sénégal</option>
               <option value="Tchad">Tchad</option>
             </select>
           </div>
@@ -84,6 +83,9 @@
           </span>
           <span>
             <label>Modélisation des reservoirs: <input type="checkbox" name="module3" value="Modelisation des reservoirs"></label>
+          </span>
+          <span>
+            <label>Caractérisation des réservoirs: <input type="checkbox" name="module3" value="Caractérisation des réservoirs"></label>
           </span>
           </div>
         
@@ -134,4 +136,4 @@
       </form>
     </div>
 
-    <%- include('../layouts/footer.ejs') %> 
+

@@ -54,6 +54,9 @@ const userSchema = new mongoose.Schema({
     module3: {
         type: String
     },
+    module4: {
+        type: String
+    },
     etablissement1: {
         type: String
     },

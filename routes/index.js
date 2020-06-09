@@ -46,6 +46,7 @@ router.post('/', [
         module1: req.body.module1,
         module2: req.body.module2,
         module3: req.body.module3,
+        module4: req.body.module4,
         etablissement1: req.body.etablissement1,
         annee1: req.body.annee1,
         etablissement2: req.body.etablissement2,
